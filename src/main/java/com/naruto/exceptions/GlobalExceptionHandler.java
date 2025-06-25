@@ -27,7 +27,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(PersonagemJaCadastradoException.class)
     public ResponseEntity<Object> handlerPersonagemJaCadastradoException(PersonagemJaCadastradoException ex){
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorResponse("Erro. ", ex.getMessage()));
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(new ErrorResponse("Erro. ", ex.getMessage()));
     }
 
     @ExceptionHandler(JogadorForaDoJogoException.class)
